@@ -4416,5 +4416,5 @@ var $author$project$Main$view = function (str) {
 				$elm$html$Html$text(str)
 			]));
 };
-var $author$project$Main$main = $author$project$Main$view('hello world');
+var $author$project$Main$main = $author$project$Main$view('hello Elm app world');
 _Platform_export({'Main':{'init':_VirtualDom_init($author$project$Main$main)(0)(0)}});}(this));
