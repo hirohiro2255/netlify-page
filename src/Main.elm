@@ -10,7 +10,7 @@ view str =
         [ div []
             [ h1 [ class "contents-title" ] [ text "Daily UI with Elm" ]
             , ul [ class "list-container" ]
-                [ li [ class "list-item" ] [ a [ href "#", class "item" ] [ text "day 1" ] ]
+                [ li [ class "list-item" ] [ a [ href "prods/form-validator/index.html", class "item" ] [ text "day 1" ] ]
                 , li [ class "list-item" ] [ text "list 2" ]
                 ]
             ]

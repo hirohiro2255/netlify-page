@@ -4404,7 +4404,7 @@ var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 			return 3;
 	}
 };
-var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -4415,83 +4415,151 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
-var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
-var $elm$html$Html$li = _VirtualDom_node('li');
-var $elm$html$Html$main_ = _VirtualDom_node('main');
+var $elm$html$Html$form = _VirtualDom_node('form');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $elm$html$Html$small = _VirtualDom_node('small');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $elm$html$Html$ul = _VirtualDom_node('ul');
-var $author$project$Main$view = function (str) {
+var $elm$html$Html$Attributes$type_ = $elm$html$Html$Attributes$stringProperty('type');
+var $elm$html$Html$input = _VirtualDom_node('input');
+var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
+var $author$project$FormValidator$viewInput = F3(
+	function (t, i, p) {
+		return A2(
+			$elm$html$Html$input,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$type_(t),
+					$elm$html$Html$Attributes$id(i),
+					$elm$html$Html$Attributes$placeholder(p)
+				]),
+			_List_Nil);
+	});
+var $elm$html$Html$Attributes$for = $elm$html$Html$Attributes$stringProperty('htmlFor');
+var $elm$html$Html$label = _VirtualDom_node('label');
+var $author$project$FormValidator$viewLabel = F2(
+	function (f, t) {
+		return A2(
+			$elm$html$Html$label,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$for(f)
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text(t)
+				]));
+	});
+var $author$project$FormValidator$view = function (str) {
 	return A2(
-		$elm$html$Html$main_,
+		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('container contents')
+				$elm$html$Html$Attributes$class('container')
 			]),
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$div,
-				_List_Nil,
+				$elm$html$Html$form,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$id('form'),
+						$elm$html$Html$Attributes$class('form')
+					]),
 				_List_fromArray(
 					[
 						A2(
-						$elm$html$Html$h1,
+						$elm$html$Html$h2,
+						_List_Nil,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('contents-title')
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('Daily UI with Elm')
+								$elm$html$Html$text('Register with us')
 							])),
 						A2(
-						$elm$html$Html$ul,
+						$elm$html$Html$div,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('list-container')
+								$elm$html$Html$Attributes$class('form-control')
 							]),
 						_List_fromArray(
 							[
+								A2($author$project$FormValidator$viewLabel, 'username', 'Username'),
+								A3($author$project$FormValidator$viewInput, 'text', 'username', 'Enter username'),
 								A2(
-								$elm$html$Html$li,
+								$elm$html$Html$small,
+								_List_Nil,
 								_List_fromArray(
 									[
-										$elm$html$Html$Attributes$class('list-item')
-									]),
-								_List_fromArray(
-									[
-										A2(
-										$elm$html$Html$a,
-										_List_fromArray(
-											[
-												$elm$html$Html$Attributes$href('prods/form-validator/index.html'),
-												$elm$html$Html$Attributes$class('item')
-											]),
-										_List_fromArray(
-											[
-												$elm$html$Html$text('day 1')
-											]))
-									])),
-								A2(
-								$elm$html$Html$li,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('list-item')
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('list 2')
+										$elm$html$Html$text('Error message')
 									]))
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('form-control')
+							]),
+						_List_fromArray(
+							[
+								A2($author$project$FormValidator$viewLabel, 'email', 'Email'),
+								A3($author$project$FormValidator$viewInput, 'text', 'email', 'Enter email'),
+								A2(
+								$elm$html$Html$small,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Error message')
+									]))
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('form-control')
+							]),
+						_List_fromArray(
+							[
+								A2($author$project$FormValidator$viewLabel, 'password', 'Password'),
+								A3($author$project$FormValidator$viewInput, 'password', 'password', 'Enter password'),
+								A2(
+								$elm$html$Html$small,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Error message')
+									]))
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('form-control')
+							]),
+						_List_fromArray(
+							[
+								A2($author$project$FormValidator$viewLabel, 'password2', 'Confirm Password'),
+								A3($author$project$FormValidator$viewInput, 'password', 'password2', 'Enter password again'),
+								A2(
+								$elm$html$Html$small,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Error message')
+									]))
+							])),
+						A2(
+						$elm$html$Html$button,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$type_('submit')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Submit')
 							]))
 					]))
 			]));
 };
-var $author$project$Main$main = $author$project$Main$view('hello Elm app world');
-_Platform_export({'Main':{'init':_VirtualDom_init($author$project$Main$main)(0)(0)}});}(this));
+var $author$project$FormValidator$main = $author$project$FormValidator$view('Form Validator');
+_Platform_export({'FormValidator':{'init':_VirtualDom_init($author$project$FormValidator$main)(0)(0)}});}(this));
