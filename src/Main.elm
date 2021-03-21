@@ -9,4 +9,4 @@ view str =
 
 
 main =
-    view "hello world"
+    view "hello Elm app world"
